@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de Resultados de Exámenes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body >
+    <!-- Sección para seleccionar el examen -->
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <div class="selector-examen">
+            <label for="examen">Selecciona un examen:</label>
+            <select id="examen">
+                <!-- Aquí podrías agregar más opciones manualmente o dinámicamente con JavaScript -->
+                <option value="examen2">Examen 2</option>
+                <option value="examen1">Examen 1</option>
+            </select>
+        </div>
+    
+        <!-- Subsección para seleccionar el año -->
+        <div class="selector-ano">
+            <label for="ano">Selecciona el año:</label>
+            <select id="ano">
+                <option value="primer">Primer año</option>
+                <option value="segundo">Segundo año</option>
+                <option value="tercer">Tercer año</option>
+                <option value="cuarto">Cuarto año</option>
+                <option value="quinto">Quinto año</option>
+            </select>
+        </div>
+    
+        <!-- Input para buscar por ID -->
+        <div class="buscador-id">
+        <label for="id">Introduce el ID:</label>
+        <input type="text" id="id" placeholder="Ej. 123456">
+        <button onclick="buscarPorID()">Buscar</button>
+        </div>  
+        
+        <!-- Espacio para mostrar los resultados -->
+        <div id="resultados" class="resultados">
+            <!-- Esta sección se llenará dinámicamente con JavaScript -->
+        </div>          
+    </div>
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
