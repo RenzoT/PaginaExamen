@@ -1,10 +1,10 @@
 const sqlite3 = require('sqlite3').verbose();
-const XLSX = require('xlsx');
+import { readFile, utils } from 'xlsx';
 
-const workbook = XLSX.readFile('notas.xlsx'); // Reemplaza 'ruta_del_archivo.xlsx' con la ruta correcta de tu archivo
+const workbook = readFile('notas.xlsx'); // Reemplaza 'ruta_del_archivo.xlsx' con la ruta correcta de tu archivo
 const sheetName = workbook.SheetNames[0]; // Suponemos que quieres la primera hoja
 const sheet = workbook.Sheets[sheetName];
-const data = XLSX.utils.sheet_to_json(sheet);
+const data = utils.sheet_to_json(sheet);
 
 let db = new sqlite3.Database('./examenes.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
